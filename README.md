@@ -1,10 +1,36 @@
 # SimpleApi
 
+[![AppVersion-version](https://img.shields.io/badge/AppVersion-1.0.0-brightgreen.svg?style=flat)](https://github.com/delvedor/appversion?#version)
+
+[![AppVersion-status](https://img.shields.io/badge/Status-beta-brightgreen.svg?style=flat)](https://github.com/delvedor/appversion?#status)
+
 Making a basic api with nodejs express framework and prism orm.
 
 Base image already have installed yarn so we only need to use it.
 
-## Some commands for docker development
+## Requirements
+
+To use this project you need the following.
+
+- pyenv
+- docker
+
+If you don't want to install pyenv, install docker-compose for you system.
+
+## Usage
+
+To initialize the project for first time run:
+`make init`
+
+This will check if you have pyenv installed. If installed will update it and
+create a virtual env called `simpleapp-env` and then will install docker-compose.
+
+Then run:
+`pyenv activate simpleapi-env`
+
+and finally:
+
+`make`
 
 ## Git Hooks
 
@@ -13,28 +39,20 @@ message. The script can be found at `scripts/prepare-commit-message.sh`. If you 
 
 `./scripts/prepare-commit-message.sh $COMMIT_MSG_FILE`
 
-## Semantic versioning
+## Commands
 
-This project uses semantic versioning with appversion package. To initialize it run:
+To generate a badge for the project run:
 
-```init
-docker run --rm -it --name test-front -p 8000:8000 -v `pwd`:/usr/src -v nodemodules:/usr/src/node_modules test-node yarn apv init
-```
+`make apv.generatebadge`
 
-To update a version run:
+To generate the status badge run:
 
-```shell
-docker run --rm -it --name test-front -p 8000:8000 -v `pwd`:/usr/src -v nodemodules:/usr/src/node_modules test-node yarn apv update <patch/minor/major>
-```
+`make apv.generatestatus`
 
-To generate a badge:
+To update the version run:
 
-```shell
-docker run --rm -it --name test-front -p 8000:8000 -v `pwd`:/usr/src -v nodemodules:/usr/src/node_modules test-node yarn apv generate-badge <version/status>
-```
+`make apv.updateversion version=<major/minor/patch>`
 
-To set project status:
+To set the status badge run:
 
-```shell
-docker run --rm -it --name test-front -p 8000:8000 -v `pwd`:/usr/src -v nodemodules:/usr/src/node_modules test-node yarn apv set-status <stable/rc/beta/alpha>
-```
+`make apv.setstatus status=<stable/rc/beta/alpha>`
