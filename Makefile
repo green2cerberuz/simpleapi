@@ -28,6 +28,13 @@ docker.down:
 	docker-compose down
 
 
+yarn.add:
+
+	docker run --rm -it --name $(CONTAINER_NAME) -p 8000:8000 \
+	-v `pwd`:/usr/src -v $(DEFAULT_NODE_VOLUME)-$(CONTAINER_NAME):/usr/src/node_modules $(IMAGE_NAME) \
+	yarn add $(package)
+
+
 apv.init:
 
 	docker run --rm -it --name $(CONTAINER_NAME) -p 8000:8000 \
