@@ -2,6 +2,8 @@
 # Script taken from:
 # https://stackoverflow.com/questions/5894946/how-to-add-gits-branch-name-to-the-commit-message
 # and modified for use with husky.
+
+echo "entre en el archivo"
 COMMIT_MSG_FILE=$1
 
 if [ -z "$COMMIT_MSG_FILE" ]; then
