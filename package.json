@@ -1,0 +1,22 @@
+{
+  "name": "simpleapi",
+  "version": "1.0.0",
+  "description": "simple node js backend api",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/green2cerberuz/simpleapi.git"
+  },
+  "author": "Cristhian Bravo",
+  "license": "MIT",
+  "homepage": "https://github.com/green2cerberuz/simpleapi#readme",
+  "dependencies": {
+    "appversion": "^1.7.1",
+    "express": "^4.17.1",
+    "prisma": "^2.21.2"
+  }
+}
