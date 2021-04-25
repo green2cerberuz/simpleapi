@@ -34,8 +34,8 @@ and finally:
 
 ## Git Hooks
 
-This projects uses the preparee-commit-message hook to add the branch name to our commit
-message. The script can be found at `scripts/prepare-commit-message.sh`. If you want to activate it, yo need to add the following line to `.git/hooks/prepare-commit-message` file after the variable declarations.
+This projects uses the preparee-commit-message hook to add the branch name to our commit message. The script can be found at `scripts/prepare-commit-message.sh`. If you want to activate it, you need to
+create copy the content of `prepare-commit-msg.sample` into a file called  `prepare-commit-msg.sample` and set it as executable. In addition, add this line: `./scripts/prepare-commit-message.sh $COMMIT_MSG_FILE` to `.git/hooks/prepare-commit-message` file after the variable declarations.
 
 `./scripts/prepare-commit-message.sh $COMMIT_MSG_FILE`
 
