@@ -10,7 +10,7 @@ ENV APP_HOME /usr/src
 WORKDIR $APP_HOME
 
 # COPY all data from project directory
-COPY ./package.json  $APP_HOME/
+COPY ./package.json yarn.loc[k]  $APP_HOME/
 
 # RUN npm install yarn
 RUN yarn install

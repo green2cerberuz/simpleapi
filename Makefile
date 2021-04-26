@@ -38,7 +38,7 @@ yarn.add:
 
 	docker run --rm -it --name $(CONTAINER_NAME) -p $(PORT):$(PORT) \
 	-v `pwd`:/usr/src -v $(CONTAINER_NAME)-$(DEFAULT_NODE_VOLUME):/usr/src/node_modules $(IMAGE_NAME) \
-	yarn add $(package)
+	yarn add $(package) $(stage)
 
 
 apv.init:
